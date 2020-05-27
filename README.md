@@ -58,3 +58,38 @@ Ref to:
 - https://docs.unity3d.com/Manual/BestPracticeGuides.html
 - https://thoughtbot.com/blog/how-to-git-with-unity
 - https://www.reddit.com/r/gamedev/comments/6mc1az/lets_talk_about_unity_git_best_practices_and/
+
+## Development workflow topic's
+This sections describes how to setup and use a development workflow based on git.
+
+### Branching
+The git scm should have the following branches:
+- `master`: Stable branch, which contains only features that are done and tests.
+- `dev`: Stable branch, which is the entry point for `feature` branches. If a set of features is completed and proven as "stable", a "pull request" have to be created on GitHub for "merging" it into the `master` branch.
+- `feature/xy`: Unstable branch, which contain's the work of a single feature. If the feature is done, a "pull requests" have to be created on GitHub for "merging" it into the `dev` branch.
+
+### Making commits
+A commit message should always include a reference (link) to the corresponding Issue like:
+```
+Brief description
+
+Further explanation.
+
+Fixes: https://github.com/plone/plone.app.discussion/issue/999
+```
+
+### Basic workflow
+A basic workflow during development could be the following one:
+```
+git checkout dev
+git pull
+git checkout -b feature/xy
+... develop the feature ...
+git add .
+git commit -m "Commit message; Ref: https://github.com/link/to/issue/1"
+git push
+```
+
+### Further references
+- https://docs.plone.org/develop/coredev/docs/git.html#making-commits
+- https://www.atlassian.com/git/tutorials/comparing-workflows
