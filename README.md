@@ -87,7 +87,14 @@ git checkout -b feature/xy
 ... develop the feature ...
 git add .
 git commit -m "Commit message; Ref: https://github.com/link/to/issue/1"
+git push --set-upstream origin feature/xy
+git checkout dev
+git pull
+git checkout feature/xy
+git merge dev
+... resolve merge conflicts ...
 git push
+... create pull request ...
 ```
 
 ### Further references
