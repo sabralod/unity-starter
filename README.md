@@ -100,3 +100,15 @@ git push
 ### Further references
 - https://docs.plone.org/develop/coredev/docs/git.html#making-commits
 - https://www.atlassian.com/git/tutorials/comparing-workflows
+
+## Project management topic's
+A basic approach could be, to use the provided GitHub functionalities.
+
+### Issues
+- https://github.com/sabralod/unity-starter/issues
+
+### Milestones
+- https://github.com/sabralod/unity-starter/milestones
+
+### Project board
+- https://github.com/sabralod/unity-starter/projects/1
