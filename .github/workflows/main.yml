@@ -32,7 +32,7 @@ jobs:
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v1.0
+        uses: webbertakken/unity-builder@v0.15
         with:
           unityVersion: 2019.2.11f1
           targetPlatform: StandaloneLinux64 
