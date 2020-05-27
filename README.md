@@ -47,6 +47,8 @@ It will create the [`./.vscode/settings.json`](./.vscode/settings.json) file wit
 ```
 
 ### GitHub Actions integration
+To setup a CICD pipeline, the [unity-builder](https://github.com/marketplace/actions/unity-builder?version=v1.0) GitHub action seems to be the best way for a first approach.
+
 Ref to:
 - https://github.com/marketplace/actions/unity-request-activation-file#unity---request-activation-file
 - https://github.com/marketplace/actions/unity-builder?version=v1.0
