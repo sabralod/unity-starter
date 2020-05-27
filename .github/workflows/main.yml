@@ -32,10 +32,10 @@ jobs:
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v0.10
+        uses: webbertakken/unity-builder@v1.0
         with:
           unityVersion: 2019.2.11f1
-          targetPlatform: WebGL 
+          targetPlatform: StandaloneLinux64 
 
       # Output 
       - uses: actions/upload-artifact@v1
