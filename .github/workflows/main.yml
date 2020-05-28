@@ -41,6 +41,7 @@ jobs:
       - name: Build project
         uses: webbertakken/unity-builder@v1.0
         with:
+          customParameters: -nographics -batchmode
           unityVersion: 2019.3.13f1
           targetPlatform: WebGL 
 
