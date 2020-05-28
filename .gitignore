@@ -61,4 +61,5 @@ crashlytics-build.properties
 .gitconfig
 .DS_Store
 Unity_v2019.x.ulf
+Unity_v2019.x.ulf_old
 !/[Ll]ibrary/*.asset
