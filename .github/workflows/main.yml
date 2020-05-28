@@ -5,6 +5,8 @@ on:
   push: { branches: [feature/purge] }
 
 env:
+  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
@@ -35,7 +37,7 @@ jobs:
         uses: webbertakken/unity-builder@v1.0
         with:
           unityVersion: 2019.3.13f1
-          targetPlatform: StandaloneLinux64 
+          targetPlatform: WebGL 
 
       # Output 
       - uses: actions/upload-artifact@v1
