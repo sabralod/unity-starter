@@ -26,6 +26,11 @@ jobs:
           path: Library
           key: Library
 
+      - name: Activate Unity
+        uses: webbertakken/unity-activate@v1.2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
       # # Test
       # - name: Run tests
       #   uses: webbertakken/unity-test-runner@v1.3
@@ -44,6 +49,10 @@ jobs:
         with:
           name: Build
           path: build
+      
+      - name: Return license
+        uses: webbertakken/unity-return-license@v1
+        if: always()
 
 # jobs:
 #   buildForSomePlatforms:
