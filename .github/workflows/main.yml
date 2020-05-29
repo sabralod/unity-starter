@@ -5,8 +5,8 @@ on:
   push: { branches: [feature/purge] }
 
 env:
-  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  # UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+  # UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: Library
+          path: project/Library
           key: Library
 
       - name: Activate Unity
@@ -42,7 +42,7 @@ jobs:
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v1.0
+        uses: webbertakken/unity-builder@v0.10
         with:
           projectPath: project
           unityVersion: 2019.3.13f1
