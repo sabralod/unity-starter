@@ -63,3 +63,5 @@ crashlytics-build.properties
 Unity_v2019.x.ulf
 Unity_v2019.x.ulf_old
 !/[Ll]ibrary/*.asset
+
+local.env
