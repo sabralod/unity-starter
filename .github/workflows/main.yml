@@ -1,8 +1,8 @@
 name: Build Pipeline
 
 on:
-  pull_request: { branches: [dev]}
-  push: { branches: [dev] }
+  pull_request: { branches: [master, dev]}
+  push: { branches: [master, dev] }
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -21,7 +21,7 @@ jobs:
         targetPlatform:
           # - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           # - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+          # - StandaloneLinux64 # Build a Linux 64-bit standalone.
           # - iOS # Build an iOS player.
           - WebGL # WebGL.
     steps:
@@ -50,10 +50,10 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-      # - uses: actions/upload-artifact@v1
-      #   with:
-      #     name: Build
-      #     path: build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
   # buildProject:
   #   name: WebGL build
   #   runs-on: ubuntu-latest

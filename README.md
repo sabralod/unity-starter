@@ -47,12 +47,32 @@ It will create the [`./.vscode/settings.json`](./.vscode/settings.json) file wit
 ```
 
 ### GitHub Actions integration
-To setup a CICD pipeline, the [unity-builder](https://github.com/marketplace/actions/unity-builder?version=v1.0) GitHub action seems to be the best way for a first approach.
+To setup a CICD pipeline, the [unity-builder](https://github.com/marketplace/actions/unity-builder?version=v1.0) GitHub action seems to be a good way for a first approach.
+
+#### Short introduction
+The pipelines (aka workflows) are configurated in the directory `./github/workflows`. In this example the following workflows are included:
+- [`.github/workflows/activation.yml`](.github/workflows/activation.yml): With new major releases of Unity a new licence activation have to be triggered. This job takes care of that, beside of the [manual request of a licence file](https://license.unity3d.com/manual).
+- [`.github/workflows/main.yml`](.github/workflows/main.yml): Build pipeline, defining the build properties and calling several GitHub Actions like:
+    - [`checkout`](https://github.com/marketplace/actions/checkout),
+    - [`cache`](https://github.com/marketplace/actions/cache),
+    - [`unity-test-runner`](https://unity-ci.com/docs/github/test-runner),
+    - [`unity-builder`](https://unity-ci.com/docs/github/builder).
+
+#### Testing your GitHub Action local
+The cli tool [Act](https://github.com/nektos/act) can be used to run the workflows local. Act uses the docker api to pull the same images as GitHub Actions do. It takes care about the dependencies of your actions and the needed environment variables.
+
+#### Testing with GitHub Runners on self-hosted machines
+A self-hosted machine can be bound to your GitHub Actions by connecting a [Runner](https://github.com/actions/runner) to it. Besides of act, this can be a way to test your workflows local without burden your price plan's too much.
+
+#### Pricing
+[Here](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions) you can find the pricing tables.
 
 Ref to:
-- https://github.com/marketplace/actions/unity-request-activation-file#unity---request-activation-file
-- https://github.com/marketplace/actions/unity-builder?version=v1.0
+- https://unity-ci.com/docs/github/activation
+- https://unity-ci.com/docs/github/builder
 - https://github.com/webbertakken/unity-actions
+- https://github.com/nektos/act
+- https://github.com/actions/runner
 
 ### Further references
 - https://docs.unity3d.com/Manual/BestPracticeGuides.html
